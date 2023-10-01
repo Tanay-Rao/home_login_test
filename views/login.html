@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: "Roboto Mono", monospace;
+      background-image: url('views/login_image.png'); /* Replace 'background-image.jpg' with your image URL */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+    }
+
+    .login-container {
+      max-width: 800px; /* Increased width */
+      background-color: rgba(255, 255, 255, 0.7); /* Increased transparency */
+      border: 2px solid #ccc; /* Thicker border */
+      padding: 40px; /* Increased padding */
+      border-radius: 20px; /* Increased border radius */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Increased box shadow */
+      text-align: center; /* Center-align the content */
+      margin: auto;
+      margin-top: 50px;
+    }
+
+    .login-container h2 {
+      font-size: 36px; /* Increased font size */
+    }
+
+    .login-container label {
+      font-weight: bold;
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 15px; /* Increased padding */
+      margin-bottom: 20px; /* Increased margin */
+      border: 1px solid #ccc;
+      border-radius: 5px; /* Increased border radius */
+    }
+
+    .login-container input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 20px 40px; /* Increased padding */
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .login-container input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <% if (errorMessage) { %>
+    <p style="color: red;"><%= errorMessage %></p>
+    <% } %>
+    <form action="/loginsubmit" method="post">
+      <label for="username">Username: </label>
+      <input type="text" name="username" id="username" required><br><br>
+      <label for="password">Password: </label>
+      <input type="password" name="password" id="password" required><br><br>
+      <input type="submit" value="Login">
+    </form>
+  </div>
+</body>
+</html>
+
